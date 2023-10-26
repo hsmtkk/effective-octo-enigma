@@ -7,3 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: hsmtkk/super-robot@main
+      with:
+        foo-input: "FooBar"

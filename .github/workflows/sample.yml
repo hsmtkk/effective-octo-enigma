@@ -3,9 +3,18 @@ name: sample
 on:
   push:
 jobs:
-  build:
+  job0:
     runs-on: ubuntu-latest
     steps:
     - uses: hsmtkk/super-robot@main
+      id: first
       with:
         foo-input: "FooBar"
+    outputs:
+      hoge-output: ${{steps.first.outputs.hoge-output}}
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - env:
+        HOGE_OUTPUT: ${{needs.job0.outputs.hoge-output}}
+      run: echo $HOGE_OUTPUT

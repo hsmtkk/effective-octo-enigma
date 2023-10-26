@@ -1,0 +1,8 @@
+name: sample
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: hsmtkk/super-robot@1222cf3d95d60fb842bbff12ff3342d784f2d2f4

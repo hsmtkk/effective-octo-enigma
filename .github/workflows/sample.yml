@@ -13,6 +13,7 @@ jobs:
     outputs:
       hoge-output: ${{steps.first.outputs.hoge-output}}
   job1:
+    needs: job0
     runs-on: ubuntu-latest
     steps:
     - env:
